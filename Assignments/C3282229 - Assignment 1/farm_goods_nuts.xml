@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Farm [
+<!-- DTD_rules -->
+	<!ELEMENT Farm (Farm1, Farm2, Farm3)>
+	<!ELEMENT Farm1 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT Farm2 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT Farm3 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT goodsType (#PCDATA)>
+	<!ELEMENT farmName (#PCDATA)>
+	
+	<!ELEMENT farmEmployees (owner,headOfGoodsPicking,headOfPackaging)+>
+	<!ELEMENT owner (#PCDATA)>
+	<!ELEMENT headOfGoodsPicking (#PCDATA)>
+	<!ELEMENT headOfPackaging (#PCDATA)>
+
+	<!ELEMENT farmLogo (image?)>
+	<!ELEMENT farmPicture (image)>
+	<!ELEMENT image (#PCDATA)>
+	
+	<!ELEMENT farmDescription (#PCDATA)>
+	<!ELEMENT URL (#PCDATA)>
+	<!ELEMENT address (#PCDATA)>
+	<!ELEMENT phoneNumber (number)+>
+	<!ELEMENT number (#PCDATA)>
+
+	<!ELEMENT delivery (minimumPrice,deliveryFee,deliveryTime)>
+	<!ELEMENT minimumPrice (#PCDATA)>
+	<!ELEMENT deliveryFee (#PCDATA)>
+	<!ELEMENT deliveryTime (#PCDATA)>
+	<!ATTLIST deliveryTime days (business | calendar) #REQUIRED>
+	
+	<!ELEMENT goods (goodsName,goodsPicture,goodsAmount)+>
+	<!ELEMENT goodsName (#PCDATA)>
+	<!ELEMENT goodsPicture (image)>
+	<!ELEMENT goodsAmount (#PCDATA)>
+
+	<!ENTITY LDSF "Loco del Solo Farm">
+	<!ENTITY wldsf "www.locodelsolofarm.com">
+	<!ENTITY FCC "The Friendly Citrus Co.">
+]>
+
+<Farm>
+	<Farm1>
+		<goodsType>Nuts</goodsType>
+		<farmName>He Can, She Can, Pecan!</farmName>
+		<farmEmployees>
+			<owner>Katherine Poppy</owner>
+			<headOfGoodsPicking>Cassidy Austin</headOfGoodsPicking>
+			<headOfPackaging>Marty Southunder</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/pecans.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/pecanfarm.jpg</image>
+		</farmPicture>
+		<farmDescription>He Can, She Can, Pecan produce the greatest pecans for restuarants and households to use in cooking, or consume as a healthy snack. People are more then welcome to come visit the farm and see the work that goes into picking and packaging pecans</farmDescription>
+		<URL>www.canpecan.com</URL>
+		<address>90 Southlake St, Triangle Springs</address>
+		<phoneNumber>
+			<number>23021199</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$8</minimumPrice>
+			<deliveryFee>$12</deliveryFee>
+			<deliveryTime days="calendar">5-7 Days</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Pecan</goodsName>
+			<goodsPicture>
+				<image>images/pecanpic.jpg</image>
+			</goodsPicture>
+			<goodsAmount>Available in minimum amounts of 1Kg, increasing in 500g amounts</goodsAmount>
+		</goods>
+	</Farm1>
+
+	<Farm2>
+		<goodsType>Nuts</goodsType>
+		<farmName>All the Almonds</farmName>
+		<farmEmployees>
+			<owner>Robert "Bobby" Tarantino</owner>
+			<headOfGoodsPicking>Sasha Campanero</headOfGoodsPicking>
+			<headOfPackaging>Adam Nevill</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/almond_farming.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/almond_farm.jpg</image>
+		</farmPicture>
+		<farmDescription>Based in NSW, the All the Almonds team produce the most almonds in the Southern Hemisphere for commerical and household use/consumption every year. Every almond tree is taken care of by our team of experienced team members, which is difficult work with over 3000 trees. We are </farmDescription>
+		<URL>www.allthealmonds.com.au</URL>
+		<address>12 Gabba Drive, Almville</address>
+		<phoneNumber>
+			<number>46532984</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$15</minimumPrice>
+			<deliveryFee>15% of the product price</deliveryFee>
+			<deliveryTime days="business">2 days in NSW, 2-7 days Australia wide</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Almond</goodsName>
+			<goodsPicture>
+				<image>images/generic_almond.jpg</image>
+			</goodsPicture>
+			<goodsAmount>Avaiable in amounts ranging from 500g to 20Kg</goodsAmount>
+		</goods>
+	</Farm2>
+
+	<Farm3>
+		<goodsType>Nuts</goodsType>
+		<farmName>The Wacky Walnut</farmName>
+		<farmEmployees>
+			<owner>Freddie Fiasco</owner>
+			<headOfGoodsPicking>Leroy Jenkins</headOfGoodsPicking>
+			<headOfPackaging>Albert Chers</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/walnut_logo.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/walnut_farm.jpg</image>
+		</farmPicture>
+		<farmDescription>Here at the Wacky Walnut, we believe in producing quality walnuts. So good in fact, that you will have ahard time putting them down because they will just be that delicious</farmDescription>
+		<URL>www.thewackywalnut.com</URL>
+		<address>48 Nutty Avenue, Walnut Vale</address>
+		<phoneNumber>
+			<number>0476295714</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$10</minimumPrice>
+			<deliveryFee>$$2.50 per 200g</deliveryFee>
+			<deliveryTime days="business">4-6 Days</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Walnut</goodsName>
+			<goodsPicture>
+				<image>images/walnut.jpg</image>
+			</goodsPicture>
+			<goodsAmount>Available in packs of 250g</goodsAmount>
+		</goods>
+	</Farm3>
+
+</Farm>
+
+<!--  
+Goods type (one only)
+Farm name (one only)
+Farm Employees
+	Owner 
+	Head of Fruit Picking
+	Head of Packaging
+Farm logo (zero or one)
+Farm picture (one only)
+Farm description
+URL (one only)
+Address (one only)
+Phone number (one or more)
+Delivery (one only)
+	Mininum price
+	Delivery Fee
+	Delivery Time
+Goods (one or more)
+	Goods name
+	Goods picture
+	goodsAmount 
+
+And 3 more:
+deliveryTime
+goodsAmount
+farmEmployees -->

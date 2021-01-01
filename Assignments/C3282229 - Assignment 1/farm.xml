@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Farm [
+<!-- DTD_rules -->
+	<!ELEMENT Farm (Farm1, Farm2, Farm3)>
+	<!ELEMENT Farm1 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT Farm2 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT Farm3 (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)>
+	<!ELEMENT goodsType (#PCDATA)>
+	<!ELEMENT farmName (#PCDATA)>
+	
+	<!ELEMENT farmEmployees (owner,headOfGoodsPicking,headOfPackaging)+>
+	<!ELEMENT owner (#PCDATA)>
+	<!ELEMENT headOfGoodsPicking (#PCDATA)>
+	<!ELEMENT headOfPackaging (#PCDATA)>
+
+	<!ELEMENT farmLogo (image?)>
+	<!ELEMENT farmPicture (image)>
+	<!ELEMENT image (#PCDATA)>
+	
+	<!ELEMENT farmDescription (#PCDATA)>
+	<!ELEMENT URL (#PCDATA)>
+	<!ELEMENT address (#PCDATA)>
+	<!ELEMENT phoneNumber (number)+>
+	<!ELEMENT number (#PCDATA)>
+
+	<!ELEMENT delivery (minimumPrice,deliveryFee,deliveryTime)>
+	<!ELEMENT minimumPrice (#PCDATA)>
+	<!ELEMENT deliveryFee (#PCDATA)>
+	<!ELEMENT deliveryTime (#PCDATA)>
+	<!ATTLIST deliveryTime days (business | calendar) #REQUIRED>
+	
+	<!ELEMENT goods (goodsName,goodsPicture,goodsAmount)+>
+	<!ELEMENT goodsName (#PCDATA)>
+	<!ELEMENT goodsPicture (image)>
+	<!ELEMENT goodsAmount (#PCDATA)>
+
+	<!ENTITY LDSF "Loco del Solo Farm">
+	<!ENTITY wldsf "www.locodelsolofarm.com">
+	<!ENTITY FCC "The Friendly Citrus Co.">
+]>
+
+<Farm>
+	<Farm1>
+		<goodsType></goodsType>
+		<farmName></farmName>
+		<farmEmployees>
+			<owner></owner>
+			<headOfGoodsPicking></headOfGoodsPicking>
+			<headOfPackaging></headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image></image>
+		</farmLogo>
+		<farmPicture>
+			<image></image>
+		</farmPicture>
+		<farmDescription></farmDescription>
+		<URL></URL>
+		<address></address>
+		<phoneNumber>
+			<number></number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice></minimumPrice>
+			<deliveryFee></deliveryFee>
+			<deliveryTime days="business"></deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName></goodsName>
+			<goodsPicture>
+				<image></image>
+			</goodsPicture>
+			<goodsAmount></goodsAmount>
+		</goods>
+	</Farm1>
+
+	<Farm2>
+		<goodsType></goodsType>
+		<farmName></farmName>
+		<farmEmployees>
+			<owner></owner>
+			<headOfGoodsPicking></headOfGoodsPicking>
+			<headOfPackaging></headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image></image>
+		</farmLogo>
+		<farmPicture>
+			<image></image>
+		</farmPicture>
+		<farmDescription></farmDescription>
+		<URL></URL>
+		<address></address>
+		<phoneNumber>
+			<number></number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice></minimumPrice>
+			<deliveryFee></deliveryFee>
+			<deliveryTime days="business"></deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName></goodsName>
+			<goodsPicture>
+				<image></image>
+			</goodsPicture>
+			<goodsAmount></goodsAmount>
+		</goods>
+	</Farm2>
+
+	<Farm3>
+		<goodsType></goodsType>
+		<farmName></farmName>
+		<farmEmployees>
+			<owner></owner>
+			<headOfGoodsPicking></headOfGoodsPicking>
+			<headOfPackaging></headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image></image>
+		</farmLogo>
+		<farmPicture>
+			<image></image>
+		</farmPicture>
+		<farmDescription></farmDescription>
+		<URL></URL>
+		<address></address>
+		<phoneNumber>
+			<number></number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice></minimumPrice>
+			<deliveryFee></deliveryFee>
+			<deliveryTime days="business"></deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName></goodsName>
+			<goodsPicture>
+				<image></image>
+			</goodsPicture>
+			<goodsAmount></goodsAmount>
+		</goods>
+	</Farm3>
+
+</Farm>
+
+<!--  
+Goods type (one only)
+Farm name (one only)
+Farm Employees
+	Owner 
+	Head of Goods Picking
+	Head of Packaging
+Farm logo (zero or one)
+Farm picture (one only)
+Farm description
+URL (one only)
+Address (one only)
+Phone number (one or more)
+Delivery (one only)
+	Mininum price
+	Delivery Fee
+	Delivery Time
+Goods (one or more)
+	Goods name
+	Goods picture
+	goodsAmount 
+
+And 3 more:
+deliveryTime
+goodsAmount
+farmEmployees -->

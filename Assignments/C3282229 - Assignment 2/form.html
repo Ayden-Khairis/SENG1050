@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Survey Form</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+<h1>Survey Form</h1>
+<style>
+form > div{
+	margin-bottom: 1cm;
+}
+
+.required:after{
+	content :"*";
+	color: red;
+	margin-right: 2px;
+}
+
+</style>
+
+<script>
+function check_data(dataCollection)
+{
+	var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	// Getting Values of form
+	var lastName_ = document.forms["dataCollection"]["lastName"].value;
+	var firtName_ = document.forms["dataCollection"]["firstName"].value;
+	var password_ = document.forms["dataCollection"]["password"].value;
+	var address_ = document.forms["dataCollection"]["address"].value;
+	var age_ = document.forms["dataCollection"]["age"].value;
+	
+	// Validation using variables
+	if (firtName_ == ""){ alert("First name must be filled out"); return false; }
+
+	if (lastName_ == "") { alert("Last name must be filled out"); return false; }
+
+	if (password_ == "") { alert("Password must be filled out"); return false; }
+	
+	if (address_ == "") { alert("Address must be filled out"); return false; }
+
+	if (age_ == "No Input") { alert("Age must be selected"); return false; }
+
+	// Other Validations
+	if(mail.test(document.dataCollection.email.value) == false) { alert('Invalid email address'); return false; }
+
+	if(!document.dataCollection.gender[0].checked && !document.dataCollection.gender[1].checked)
+	{
+		alert('Please answer the gender question');
+		return false;
+	}
+
+} 
+
+</script>
+
+<div id="container">
+<form name="dataCollection" method="post" action="http://evc-cit.info/cgi-bin/echoform.cgi" onsubmit="return check_data();">
+				
+	<div class="required">
+		<label for="firstName"> Please enter your first name: </label>
+		<input id="firstName" type="text" placeholder="James" name="firstName">
+	</div>
+
+	<div class="required">
+		<label for="lastName"> Please enter your family name: </label>
+		<input id="lastName" type="text" placeholder="Smith" name="lastName">
+	</div>
+
+	<div class="required">
+		<label for="password"> Please enter your password: </label>
+		<input id="password" type="password" name="password">
+	</div>
+
+	<div class="required">
+	<label> Age </label>
+		<select name="age">
+			<option value="No Input">-- Please Select --</option>
+			<option value="Less than 20">Less than 20</option>
+			<option value="20-30">20-30</option>
+			<option value="31-40">31-40</option>
+			<option value="41-50">41-50</option>
+			<option value="51-60">51-60</option>
+			<option value="More than 60">More than 60</option>
+		</select>
+	</div>
+
+	<div class="required">
+	<label> Please enter your gender: </label>
+		Male <input type="radio" name="gender">
+		Female <input type="radio" name="gender"> 
+	</div>
+
+	<div class="required">
+		<label for="email"> Please enter your email: </label>
+		<input id="email" type="text" placeholder="example@email.com" name="email">	
+	</div>
+
+	<div class="required">
+		<label for="address"> Please enter your address: </label>
+		<input id="address" type="text"  placeholder="Address" name="address">
+	</div>
+							
+	<div>
+		<label for="phoneNumber"> Phone NO </label>
+		<select>
+			<option>+64</option>
+			<option>02</option>
+		</select>
+		<input id="phoneNumber" type="text" placeholder="23505584">
+	</div>
+
+	<div>
+		<label> Do you believe humans can survive without eating meat?<br> 
+		Also, is it possible for everyone to become vegetarian/vegan?</label><br>
+		<textarea name="surveyQ1" rows= 4 cols= 53></textarea>
+	</div>
+
+	<div>	
+		<label> What diet do you currently undertake? </label><br/>
+			Omnivore (Meat and Vegetables) <input type="checkbox" name="Omnivore" value="Omnivore"><br/>
+			Herbivore (Vegetables only) <input type="checkbox" name="Herbivore" value="Herbivore"><br/>
+			Other <input type="checkbox" name="Other" value="Other">
+	</div>
+		
+	<div>
+		<label> Are you happy with this survey?</label>
+		<input type="radio" name="Survey">Yes 
+		<input type="radio" name="Survey">No 
+	</div>
+		
+	<div>
+		<a href="https://www.visser.com.au/blog/generic-privacy-policy-for-australian-websites/">Privacy Policy</a><br/>
+		<input type="reset" value="Reset">
+		<input type="submit" value="Submit">
+	</div>
+
+</form>		
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="farm.xsl"?>
+<!DOCTYPE Farms [
+<!-- DTD_rules -->
+	<!ELEMENT Farms (Farm+)>
+	<!ELEMENT Farm (goodsType,farmName,farmEmployees,farmLogo,farmPicture,farmDescription,URL,address,phoneNumber,delivery,goods)+>
+
+	<!ELEMENT goodsType (#PCDATA)>
+	<!ELEMENT farmName (#PCDATA)>
+
+	<!ELEMENT farmEmployees (owner,headOfGoodsPicking,headOfPackaging)+>
+	<!ELEMENT owner (#PCDATA)>
+	<!ELEMENT headOfGoodsPicking (#PCDATA)>
+	<!ELEMENT headOfPackaging (#PCDATA)>
+
+	<!ELEMENT farmLogo (image?)>
+	<!ELEMENT farmPicture (image)>
+	<!ELEMENT image (#PCDATA)>
+	
+	<!ELEMENT farmDescription (#PCDATA)>
+	<!ELEMENT URL (#PCDATA)>
+	<!ELEMENT address (#PCDATA)>
+	<!ELEMENT phoneNumber (number+)>
+	<!ELEMENT number (#PCDATA)>
+
+	<!ELEMENT delivery (minimumPrice,deliveryFee,deliveryTime)>
+	<!ELEMENT minimumPrice (#PCDATA)>
+	<!ELEMENT deliveryFee (#PCDATA)>
+	<!ELEMENT deliveryTime (#PCDATA)>
+	<!ATTLIST deliveryTime days (business | calendar) #REQUIRED>
+	
+	<!ELEMENT goods (goodsName,goodsPicture,goodsAmount)+>
+	<!ELEMENT goodsName (#PCDATA)>
+	<!ELEMENT goodsPicture (image)>
+	<!ELEMENT goodsAmount (#PCDATA)>
+
+	<!ENTITY LDSF "Loco del Solo Farm">
+	<!ENTITY wldsf "www.locodelsolofarm.com">
+	<!ENTITY FCC "The Friendly Citrus Co.">
+]>
+
+<Farms>
+	<Farm>
+		<goodsType>Fruit</goodsType>
+		<farmName>&LDSF;</farmName>
+		<farmEmployees>
+			<owner>Roberto Martinez</owner>
+			<headOfGoodsPicking>Jose Raul</headOfGoodsPicking>
+			<headOfPackaging>Silvia Gomez</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/solo-farm-and-table.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/mangofarm.jpg</image>
+		</farmPicture>
+		<farmDescription>Loco del Solo Farm takes tender care in producing the freshest fruits all year round</farmDescription>
+		<URL>&wldsf;</URL>
+		<address>53 Farmland Road, Southland</address>
+		<phoneNumber>
+			<number>43258964</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$20</minimumPrice>
+			<deliveryFee>$20</deliveryFee>
+			<deliveryTime days="business">Next Day Delivery</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Mango</goodsName>
+			<goodsPicture>
+				<image>images/mango.jpg</image>
+			</goodsPicture>
+			<goodsAmount>Can be bought in half dozen or dozen amounts</goodsAmount>
+		</goods>
+	</Farm>
+
+	<!-- New Farm -->
+	<Farm>
+		<goodsType>Fruit</goodsType>
+		<farmName>Apple Garden</farmName>
+		<farmEmployees>
+			<owner>John Henry</owner>
+			<headOfGoodsPicking>Frank Brooks</headOfGoodsPicking>
+			<headOfPackaging>Fred Burns</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/bwapple.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/apple-tree-orchard.jpg</image>
+		</farmPicture>
+		<farmDescription>Here at Apple Garden, we specialse in prducing the best and freshest apples for our customers all year round. We have over 1000 apple trees which are carefully cultivated by our team of apple farmers, taking care with every pick</farmDescription>
+		<URL>www.applegardenfarmuk</URL>
+		<address>142 Kings Road, United Valley</address>
+		<phoneNumber>
+			<number>0629334856</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$10</minimumPrice>
+			<deliveryFee>$15</deliveryFee>
+			<deliveryTime days="calendar">Delivered 2-3 days after payment is processed</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Apple</goodsName>
+			<goodsPicture>
+				<image>images/apple.jpg</image>
+			</goodsPicture>
+			<goodsAmount>Can be bought in any amounts. For example, 1kg or 6 apples</goodsAmount>
+		</goods>
+	</Farm>
+
+	<!-- New Farm -->
+	<Farm>
+		<goodsType>Fruit</goodsType>
+		<farmName>&FCC;</farmName>
+		<farmEmployees>
+			<owner>Jeff McGuire</owner>
+			<headOfGoodsPicking>James McGuire</headOfGoodsPicking>
+			<headOfPackaging>Thomas McGuire</headOfPackaging>
+		</farmEmployees>
+		<farmLogo>
+			<image>images/citrusfruits.jpg</image>
+		</farmLogo>
+		<farmPicture>
+			<image>images/citrus.png</image>
+		</farmPicture>
+		<farmDescription>We have a great pleasure in cultivating the very best seasonal citrus fruits to be enjoyed by our loyal customers. The Friendly Citrus Co. was founded in 1865, and has been running as a family business for the past 6 generations</farmDescription>
+		<URL>www.thefriendlycitrusco.com.au</URL>
+		<address>14 Bandito Way, Royaltown</address>
+		<phoneNumber>
+			<number>0426565297</number>
+		</phoneNumber>
+		<delivery>
+			<minimumPrice>$40</minimumPrice>
+			<deliveryFee>$10</deliveryFee>
+			<deliveryTime days="business">1-3 Days</deliveryTime>
+		</delivery>
+		<goods>
+			<goodsName>Finger Lime</goodsName>
+			<goodsPicture>
+				<image>images/fingerlime.png</image>
+			</goodsPicture>
+			<goodsAmount>Ranges from 2Kg to 10Kg amounts</goodsAmount>
+		</goods>
+	</Farm>
+</Farms>
